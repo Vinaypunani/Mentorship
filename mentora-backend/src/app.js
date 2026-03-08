@@ -5,6 +5,7 @@ const authRoutes = require('./modules/auth/auth.routes');
 const studentRoutes = require('./modules/students/students.routes');
 const lessonRouters = require("./modules/lessons/lessons.routes");
 const bookingRouters = require("./modules/bookings/bookings.routes");
+const sessionRouters = require("./modules/sessions/sessions.routes");
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use("/auth",authRoutes);
 app.use("/students",studentRoutes);
 app.use("/lessons",lessonRouters);
 app.use("/bookings",bookingRouters);
+app.use("/sessions",sessionRouters);
 
 app.get('/', (req, res) => {
     res.send('Mentora API Running');
