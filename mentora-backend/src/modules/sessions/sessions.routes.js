@@ -11,6 +11,6 @@ const validate = require("../../middleware/validate.middleware");
 const { createSessionSchema } = require("./sessions.validation")
 
 router.post("/", authMiddleware, authorizeRoles("mentor"), validate(createSessionSchema), controller.createSession);
-router.get("/lessons/:id/sessions", authMiddleware, validate(createSessionSchema), controller.getLessionSessions);
+router.get("/lessons/:id/sessions", authMiddleware, controller.getLessionSessions);
 
 module.exports = router;
